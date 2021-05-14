@@ -94,4 +94,13 @@ public class Dictionary {
             System.out.println("> Specified key does not exist.");
         } dictionary.remove(key);
     }
+
+    public Set<String> displayCommonMembers(String keyA, String keyB) {
+        Set<String> commonMembers = new HashSet<>();
+        for (String member : dictionary.get(keyA)) {
+            if (dictionary.get(keyB).contains(member)) {
+                commonMembers.add(member);
+            }
+        } return commonMembers;
+    }
 }

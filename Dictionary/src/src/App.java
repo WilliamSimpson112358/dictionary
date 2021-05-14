@@ -136,6 +136,18 @@ private static void dictionaryApplication() {
                 System.out.println(dictionary.hasMember(splitCommand.get(1), splitCommand.get(2)));
             }
             break;
+
+            case "COMMONMEMBERS":
+            if (splitCommand.size() != 3 ) { 
+                System.out.println("Incomplete command, please specify at least two KEYS to compare.");
+            } else {
+                Set<String> commonMembers = dictionary.displayCommonMembers(splitCommand.get(1), splitCommand.get(2));
+                int memberAmount = 0; 
+                for (String member : commonMembers) { 
+                    System.out.println(++memberAmount + ". " + member);
+                }
+            }
+
         }
     }   while (!commandInput.equals("QUIT")); 
     scanIn.close();
