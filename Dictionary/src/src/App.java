@@ -74,7 +74,7 @@ private static void dictionaryApplication() {
                 System.out.println("Invalid command, please provide a valid command"); 
                 System.out.println("Valid command: KEYEXISTS <key>.");
             } else {
-                dictionary.hasKey(splitCommand.get(1));
+                System.out.println(dictionary.hasKey(splitCommand.get(1)));
             }
             break;
  
@@ -130,11 +130,11 @@ private static void dictionaryApplication() {
             break;
  
             case "VALUEEXISTS":
-            if (splitCommand.size() != 2) {
+            if (splitCommand.size() != 3) {
                 System.out.println("Invalid command, please provide a valid command"); 
                 System.out.println("Valid command: VALUEEXISTS <key>.");
             } else {
-                dictionary.hasMember(splitCommand.get(1), splitCommand.get(2));
+                System.out.println(dictionary.hasMember(splitCommand.get(1), splitCommand.get(2)));
             }
             break;
         }
