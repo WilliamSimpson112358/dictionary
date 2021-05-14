@@ -59,19 +59,19 @@ public class Dictionary {
         } return dictionary.keySet();
     }
  
-    public Set<String> getValues (String key) { 
+    public Set<String> getMembers(String key) { 
         if (dictionary == null || dictionary.isEmpty() || dictionary.get(key) == null || dictionary.get(key).isEmpty()) { 
             return null;
         } return dictionary.get(key);
     }
 
-    public boolean hasKey (String key) {
+    public boolean hasKey(String key) {
         if (!dictionary.keySet().contains(key)) {
             return false;
         } return dictionary.keySet().contains(key);
     }
  
-    public boolean hasMember (String key, String member) {
+    public boolean hasMember(String key, String member) {
         if (dictionary == null || dictionary.isEmpty() || !dictionary.keySet().contains(key)) {
             return false;
         } return dictionary.get(key).contains(member);

@@ -99,7 +99,7 @@ private static void dictionaryApplication() {
                 System.out.println("Invalid command, please provide a valid command"); 
                 System.out.println("Valid command: MEMBERS <key>."); 
             } else { 
-                Set<String> values = dictionary.getValues(splitCommand.get(1)); 
+                Set<String> values = dictionary.getMembers(splitCommand.get(1)); 
                 int valueOrder = 0; 
                 for (String value : values) { 
                     System.out.println(++valueOrder + ". " + value);
@@ -131,7 +131,7 @@ private static void dictionaryApplication() {
             case "VALUEEXISTS":
             if (splitCommand.size() != 3) {
                 System.out.println("Invalid command, please provide a valid command"); 
-                System.out.println("Valid command: VALUEEXISTS <key>.");
+                System.out.println("Valid command: VALUEEXISTS <key> <member>.");
             } else {
                 System.out.println(dictionary.hasMember(splitCommand.get(1), splitCommand.get(2)));
             }
