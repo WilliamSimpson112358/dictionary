@@ -21,7 +21,8 @@ private static void dictionaryApplication() {
         System.out.println(">>> "); 
         commandInput = scanIn.nextLine(); 
         List<String> splitCommand = Arrays.asList(commandInput.split(" "));
- 
+        
+        // Uses the above list separated array to grab each command, 0th should be always be initial command.
         switch(splitCommand.get(0)) {
             case "ADD": 
                 if (splitCommand.size() != 3) { 

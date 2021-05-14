@@ -1,6 +1,5 @@
 package src;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -87,14 +86,12 @@ public class Dictionary {
     public boolean hasKey (String key) {
         if (!dictionary.keySet().contains(key)) {
             return false;
-        } return true;
+        } return dictionary.keySet().contains(key);
     }
  
     public boolean hasMember (String key, String member) {
-        if (!dictionary.keySet().contains(key)) {
+        if (dictionary == null || dictionary.isEmpty() || !dictionary.keySet().contains(key)) {
             return false;
-        } else if (dictionary.get(key).contains(member)) {
-            return true;
-        } return false;
+        } return dictionary.get(key).contains(member);
     }
 }
