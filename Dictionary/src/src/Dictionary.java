@@ -34,25 +34,7 @@ public class Dictionary {
     public void clear() {
         dictionary.clear();
     }
- 
-    public void remove(String key, String member) { 
-        if (!dictionary.keySet().contains(key)) { 
-            System.out.println("> Specified key does not exist.");
-        } else if (!dictionary.get(key).contains(member)) { 
-            System.out.println("> Can’t delete non-existent member from key.");
-        } if (dictionary.get(key).size() > 1) {
-            dictionary.get(key).remove(member); 
-        } else { 
-            dictionary.remove(key);
-        }
-    }
- 
-    public void removeAll(String key) {
-        if (!dictionary.keySet().contains(key)) {
-            System.out.println("> Specified key does not exist.");
-        } dictionary.remove(key);
-    }
- 
+
     public List<String> getAllMembers() {
         if (dictionary == null || dictionary.isEmpty() || dictionary.keySet() == null || dictionary.keySet().isEmpty()) {
             return null;
@@ -63,7 +45,7 @@ public class Dictionary {
         }
         return allMembersList;
     }
- 
+
     public Map<String, Set<String>> getItems() {
         if (dictionary == null || dictionary.isEmpty()) {
             return null;
@@ -82,7 +64,7 @@ public class Dictionary {
             return null;
         } return dictionary.get(key);
     }
- 
+
     public boolean hasKey (String key) {
         if (!dictionary.keySet().contains(key)) {
             return false;
@@ -93,5 +75,23 @@ public class Dictionary {
         if (dictionary == null || dictionary.isEmpty() || !dictionary.keySet().contains(key)) {
             return false;
         } return dictionary.get(key).contains(member);
+    }
+ 
+    public void remove(String key, String member) { 
+        if (!dictionary.keySet().contains(key)) { 
+            System.out.println("> Specified key does not exist.");
+        } else if (!dictionary.get(key).contains(member)) { 
+            System.out.println("> Can’t delete non-existent member from key.");
+        } if (dictionary.get(key).size() > 1) {
+            dictionary.get(key).remove(member); 
+        } else { 
+            dictionary.remove(key);
+        }
+    }
+ 
+    public void removeAll(String key) {
+        if (!dictionary.keySet().contains(key)) {
+            System.out.println("> Specified key does not exist.");
+        } dictionary.remove(key);
     }
 }

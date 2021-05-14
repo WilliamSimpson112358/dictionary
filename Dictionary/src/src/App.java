@@ -62,10 +62,9 @@ private static void dictionaryApplication() {
             break;
  
             case "HELP":
-                if (splitCommand.size() != 1) {
-                    System.out.println("Command List: ADD <key> <value>, ADDMANY <key> <value1> <value2...> ");
+                if (splitCommand.size() == 1) {
+                    System.out.println("Command List: ADD <key> <value>");
                     System.out.println("CLEAR, KEYS, MEMBERS <key>, QUIT, REMOVE <key> <value>, REMOVEALL <key>");
-                    System.out.println("REMOVEMANY <key> <value1> <value2...>");
                 }
             break;
  
